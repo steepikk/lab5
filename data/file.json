@@ -1,0 +1,101 @@
+[
+  {
+    "id": 4,
+    "name": "Cat",
+    "coordinates": {
+      "x": 11.1,
+      "y": 11
+    },
+    "creationDate": "2024-03-13",
+    "age": 18,
+    "description": "ojisd",
+    "color": "BLACK",
+    "character": "FICKLE",
+    "killer": null
+  },
+  {
+    "id": 1,
+    "name": "dragon1",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2005-10-12",
+    "age": 18,
+    "description": "какой-то текст",
+    "color": "BLACK",
+    "character": "GOOD",
+    "killer": {
+      "name": "Вася",
+      "weight": 75,
+      "eyeColor": "GREEN",
+      "hairColor": "BLACK"
+    }
+  },
+  {
+    "id": 2,
+    "name": "dragon2",
+    "coordinates": {
+      "x": 2.0,
+      "y": 2
+    },
+    "creationDate": "2004-10-12",
+    "age": 19,
+    "description": "какой-то текст number 2",
+    "color": "BLUE",
+    "character": "FICKLE",
+    "killer": {
+      "name": "Евсей",
+      "weight": 100,
+      "eyeColor": "BROWN",
+      "hairColor": "ORANGE"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Vasiliy",
+    "coordinates": {
+      "x": 12.1,
+      "y": 10
+    },
+    "creationDate": "2024-03-13",
+    "age": 18,
+    "description": "I wanna",
+    "color": "BLUE",
+    "character": "CHAOTIC_EVIL",
+    "killer": {
+      "name": "Lionel",
+      "weight": 77,
+      "eyeColor": "ORANGE",
+      "hairColor": "BROWN"
+    }
+  },
+  {
+    "id": 6,
+    "name": "niofe",
+    "coordinates": {
+      "x": 99.0,
+      "y": 99
+    },
+    "creationDate": "2024-03-14",
+    "age": 99,
+    "description": "njwl",
+    "color": "GREEN",
+    "character": "GOOD",
+    "killer": null
+  },
+  {
+    "id": 5,
+    "name": "jfme",
+    "coordinates": {
+      "x": 99.0,
+      "y": 99
+    },
+    "creationDate": "2024-03-14",
+    "age": 99,
+    "description": "jiowdj",
+    "color": "GREEN",
+    "character": "GOOD",
+    "killer": null
+  }
+]
