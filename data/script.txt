@@ -1,4 +1,5 @@
 help
 info
-showexecute_script data/script_add.txt
+show
+execute_script data/script_add.txt
 print_ascending

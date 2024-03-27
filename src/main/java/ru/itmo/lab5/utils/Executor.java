@@ -31,30 +31,6 @@ public class Executor {
     /**
      * Интерактивный режим
      */
-    /*public void fromConsole() {
-        var userScanner = InputSteamer.getScanner();
-        try {
-            ExitCode exitCode = ExitCode.OK;
-            String[] inputCommand = {"", ""};
-
-            while (exitCode != ExitCode.EXIT) {
-                console.ps1();
-                try {
-                    inputCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
-                    inputCommand[1] = inputCommand[1].trim();
-                } catch (NoSuchElementException exception) {
-                    console.println("Ввод завершён. Сохранение даннных в файл...");
-                    commandController.getCommands().get("save").execute(new String[2]);
-                    break;
-                }
-
-                commandController.addToHistory(inputCommand[0]);
-                exitCode = apply(inputCommand);
-            }
-        } catch (IllegalStateException exception) {
-            console.printError("Непредвиденная ошибка!");
-        }
-    }*/
     public void fromConsole() {
         var userScanner = InputSteamer.getScanner();
         try {
@@ -93,7 +69,6 @@ public class Executor {
     public ExitCode fromScript(String argument) {
 
 
-        Integer maxDepth = 3;
         String[] inputCommand = {"", ""};
         ExitCode exitCode;
         scriptStack.add(argument);
@@ -123,17 +98,8 @@ public class Executor {
                 console.println(console.getPS1() + String.join(" ", inputCommand));
                 if (inputCommand[0].equals("execute_script")) {
                     if (!scriptStack.add(inputCommand[1])) {
-                        if (flag == false) {
-                            InputSteamer.setScanner(tmpScanner);
-                            InputSteamer.setFileMode(false);
-                            maxDepth = setMaxDepth();
-                            InputSteamer.setScanner(scriptScanner);
-                            InputSteamer.setFileMode(true);
-                            flag = true;
-                        }
-                        depth++;
+                        throw new ScriptRecursionException();
                     }
-                    if (depth > maxDepth) throw new ScriptRecursionException();
                 }
                 exitCode = apply(inputCommand);
             } while (exitCode == ExitCode.OK && scriptScanner.hasNextLine());
@@ -162,6 +128,7 @@ public class Executor {
         }
         return ExitCode.ERROR;
     }
+
 
     /**
      * Выполняет команду

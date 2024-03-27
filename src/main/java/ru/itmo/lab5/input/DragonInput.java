@@ -177,11 +177,12 @@ public class DragonInput {
         var fileMode = InputSteamer.getFileMode();
         while (true) {
             try {
-                console.println("Введите координату Y (должно быть целым числом)");
+                console.println("Введите координату Y:");
                 console.ps2();
                 var strY = InputSteamer.getScanner().nextLine().trim();
                 if (fileMode) console.println(strY);
                 y = Integer.parseInt(strY);
+                if (y > 244) throw new InvalidRangeException("Значение Y должно быть меньше 244");
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Координата Y не распознана!");
@@ -192,6 +193,8 @@ public class DragonInput {
             } catch (IllegalStateException exception) {
                 console.printError("Непредвиденная ошибка!");
                 System.exit(0);
+            }catch (InvalidRangeException exception) {
+                console.printError(exception.getMessage());
             }
         }
         return y;
@@ -205,11 +208,12 @@ public class DragonInput {
         var fileMode = InputSteamer.getFileMode();
         while (true) {
             try {
-                console.println("Введите координату X (должно быть числом с плавющей точкой):");
+                console.println("Введите координату X:");
                 console.ps2();
                 var strX = InputSteamer.getScanner().nextLine().trim();
                 if (fileMode) console.println(strX);
                 x = Double.parseDouble(strX);
+                if (x > 826) throw new InvalidRangeException("Значение X должно быть меньше 826");
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Координата X не распознана!");
@@ -220,6 +224,8 @@ public class DragonInput {
             } catch (IllegalStateException exception) {
                 console.printError("Непредвиденная ошибка!");
                 System.exit(0);
+            } catch (InvalidRangeException exception) {
+                console.printError(exception.getMessage());
             }
         }
         return x;

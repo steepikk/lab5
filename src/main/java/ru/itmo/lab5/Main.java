@@ -8,8 +8,6 @@ import ru.itmo.lab5.data.Dragon;
 import ru.itmo.lab5.input.Console;
 import ru.itmo.lab5.input.InputSteamer;
 import ru.itmo.lab5.utils.Executor;
-import sun.misc.Signal;
-import sun.misc.SignalHandler;
 
 import java.util.Scanner;
 
@@ -58,19 +56,5 @@ public class Main {
         };
 
         new Executor(console, commandController).fromConsole();
-
-        // Обработка сигнала SIGINT (Ctrl+C)
-        Signal.handle(new Signal("INT"), new SignalHandler() {
-            public void handle(Signal sig) {
-                console.println("Программа была прервана сигналом " + sig + ". Для получения справки введите 'help', для завершения программы введите 'exit'");
-            }
-        });
-
-        // Обработка сигнала SIGTSTP (Ctrl+Z)
-        Signal.handle(new Signal("TSTP"), new SignalHandler() {
-            public void handle(Signal sig) {
-                console.println("Программа была остановлена сигналом " + sig + ". Для получения справки введите 'help', для завершения программы введите 'exit'");
-            }
-        });
     }
 }

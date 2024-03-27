@@ -7,7 +7,7 @@ package ru.itmo.lab5.input;
  */
 
 public class Console {
-    private static final String PS1 = "$ ";
+    private static final String PS1 = "> ";
 
     /**
      * Выводит obj.toString() в консоль

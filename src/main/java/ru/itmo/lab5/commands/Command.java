@@ -1,18 +1,14 @@
 package ru.itmo.lab5.commands;
 
 /**
- * Абстрактная команда с именем и описанием.
+ * Абстрактный класс команды с именем и описанием.
  *
  * @author steepikk
  */
 public abstract class Command {
-    private String name, description;
+    private final String name;
+    private final String description;
 
-    /**
-     * Базовый класс команды
-     *
-     * @author hh
-     */
     public Command(String name, String description) {
         this.name = name;
         this.description = description;

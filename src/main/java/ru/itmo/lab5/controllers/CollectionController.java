@@ -32,6 +32,11 @@ public class CollectionController {
         loadCollection();
     }
 
+    /**
+     * Валидирует всех значений дракона
+     *
+     * @param console
+     */
     public void validateAll(Console console) {
         (new ArrayList<>(this.getCollection())).forEach(dragon -> {
             if (!dragon.validate()) {
@@ -204,9 +209,9 @@ public class CollectionController {
         var last = getLast();
 
         StringBuilder info = new StringBuilder();
-        for (Dragon product : collection) {
-            info.append(product);
-            if (product != last) info.append("\n\n");
+        for (Dragon dragon : collection) {
+            info.append(dragon);
+            if (dragon != last) info.append("\n\n");
         }
         return info.toString();
     }
